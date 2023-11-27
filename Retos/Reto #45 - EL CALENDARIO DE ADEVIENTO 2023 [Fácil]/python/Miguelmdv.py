@@ -48,10 +48,13 @@ def calendario(df: set, eliminados: set):
                     print("Este participante no existe")
 
             case "4":
-                eliminado = rd.choice(list(df))
-                eliminados.add(eliminado)
-                df.remove(eliminado)
-                print(eliminado, "ha ganado! Y por lo tanto ha sido eliminado")
+                if df:
+                    eliminado = rd.choice(list(df))
+                    eliminados.add(eliminado)
+                    df.remove(eliminado)
+                    print(eliminado, "ha ganado! Y por lo tanto ha sido eliminado")
+                else:
+                    print("No hay participantes para realizar el sorteo.")
 
             case "5":
                 salir = False
